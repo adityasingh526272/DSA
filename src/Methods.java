@@ -16,9 +16,29 @@ public class Methods {
 //        System.out.println("result : " + ans);
 //    }
 
-    static int add(int p, int q){
-        int sum = p+q;
-        return sum;
+//    static int add(int p, int q){
+//        int sum = p+q;
+//        return sum;
+//    }
+
+    static void solve(){
+        System.out.println("Hey");
+        int ans = add(1,2);
+        System.out.println(ans);
+        System.out.println("Bye Bye");
+    }
+
+    static int add(int a, int b){
+        System.out.println("Hello");
+        int ans = a+b;
+        return ans;
+//        System.out.println("Babber");
+    }
+
+    static void solve(int num){
+        System.out.println("inside num : " + num);
+        num = num*10;
+        System.out.println("inside num : " + num);
     }
 
     static void main() {
@@ -26,7 +46,14 @@ public class Methods {
 //        printtableof2();
 //        printsum(4,6);
 //        printMultiplication(5,14);
-        int result = add(5,8);
-        System.out.println("Result : " + result);
+//        int result = add(5,8);
+//        System.out.println("Result : " + result);
+//        System.out.println("hi");
+//        solve();
+//        System.out.println("Bye");
+        int num = 5;
+        System.out.println("inside num : " + num);
+        solve(num);
+        System.out.println("inside num : " + num);
     }
 }
