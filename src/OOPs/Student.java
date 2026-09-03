@@ -6,6 +6,7 @@ public class Student {
     public int age;
     public String name;
     public int nos;
+    private String gf;
 
     //Default constructor // attributes -> garbage
     public Student(){
@@ -13,12 +14,13 @@ public class Student {
     }
 
     //Parameterised constructor
-    public Student(int id, int age, String name, int nos){
+    public Student(int id, int age, String name, int nos, String gf){
         System.out.println("Student parameterised constructor called");
         this.id = id;
         this.age = age;
         this.name = name;
         this.nos = nos;
+        this.gf = gf;
     }
 
     //Copy constructor
@@ -39,5 +41,8 @@ public class Student {
     }
     public void bunk(){
         System.out.println(name + " Bunking");
+    }
+    private void gfChatting(){
+        System.out.println(name + " gfChatting");
     }
 }
