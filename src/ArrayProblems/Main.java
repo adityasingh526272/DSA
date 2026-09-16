@@ -102,26 +102,41 @@ public class Main {
 //    }
 
     //Question-6
-    static int[] getZeroOneCount(int arr[]){
-        int zeroCount = 0;
-        int oneCount = 0;
+//    static int[] getZeroOneCount(int arr[]){
+//        int zeroCount = 0;
+//        int oneCount = 0;
+//        for (int i=0;i<arr.length;i++){
+//            if (arr[i] == 0){
+//                zeroCount++;
+//            }
+//            else {
+//                //arr[i]=1
+//                oneCount++;
+//            }
+//        }
+//        int ans[] = {zeroCount, oneCount};
+//        return ans;
+//    }
+//
+//    static void main() {
+//        int arr[] = {1,0,1,0,0,1,1,0};
+//        int ans[] = getZeroOneCount(arr);
+//        System.out.println("Zero count = " + ans[0]);
+//        System.out.println("One count = " + ans[1]);
+//    }
+
+    //Question-7
+    static int getUnsortedElement(int arr[]){
         for (int i=0;i<arr.length;i++){
-            if (arr[i] == 0){
-                zeroCount++;
-            }
-            else {
-                //arr[i]=1
-                oneCount++;
+            if (arr[i+1] <= arr[i]) {
+                return arr[i + 1];
             }
         }
-        int ans[] = {zeroCount, oneCount};
-        return ans;
+        //kis case me main loop se bahar aajaunga
+        return -1;
     }
-
     static void main() {
-        int arr[] = {1,0,1,0,0,1,1,0};
-        int ans[] = getZeroOneCount(arr);
-        System.out.println("Zero count = " + ans[0]);
-        System.out.println("One count = " + ans[1]);
+        int arr[] = {1,2,8,6,9};
+        System.out.println(getUnsortedElement(arr));
     }
 }
