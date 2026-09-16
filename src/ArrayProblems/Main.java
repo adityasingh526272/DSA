@@ -59,20 +59,45 @@ public class Main {
 //    }
 
     //Question-4
-    static int getMaximum(int arr[]){
-        int max = arr[0];
+//    static int getMaximum(int arr[]){
+//        int max = arr[0];
+//        for (int i=0;i<arr.length;i++){
+//            if (arr[i]>max){
+//                max = arr[i];
+//            }
+//        }
+//        //jab mai yaha pahchunga toh poora array compare ho chuka hoga
+//        //and maxi ke andar sabse badi value hogi
+//        return max;
+//    }
+//
+//    static void main() {
+//        int arr[] = {5,9,3,10,14};
+//        System.out.println(getMaximum(arr));
+//    }
+
+    //Question-5
+    static int[] getPosNegSum(int arr[]){
+        int posSum = 0;
+        int negSum = 0;
         for (int i=0;i<arr.length;i++){
-            if (arr[i]>max){
-                max = arr[i];
+            if (arr[i]>0){
+                //num is positive
+                posSum = posSum + arr[i];
+            }
+            else {
+                //num is negative
+                negSum = negSum + arr[i];
             }
         }
-        //jab mai yaha pahchunga toh poora array compare ho chuka hoga
-        //and maxi ke andar sabse badi value hogi
-        return max;
+        int ans[] = {posSum, negSum};
+        return ans;
     }
 
     static void main() {
-        int arr[] = {5,9,3,10,14};
-        System.out.println(getMaximum(arr));
+        int arr[] = {5,-9,-3,10,-14,15};
+        int ans[] = getPosNegSum(arr);
+        System.out.println("Positive sum = " + ans[0]);
+        System.out.println("Negative sum = " + ans[1]);
     }
 }
