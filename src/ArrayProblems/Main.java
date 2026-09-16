@@ -18,24 +18,61 @@ public class Main {
 //    }
 
     //Question-2
-    static int[] multiplyBy10(int[] arr){
-        int size = arr.length;
-        int newArray[] = new int[size];
+//    static int[] multiplyBy10(int[] arr){
+//        int size = arr.length;
+//        int newArray[] = new int[size];
+//
+//        for (int i=0;i<size;i++){
+//            int element = arr[i];
+//            int newElement = element * 10;
+//            newArray[i] = newElement;
+//        }
+//        //return updated array
+//        return newArray;
+//    }
+//    static void main() {
+//        int arr[] = {1,2,5,3,6};
+//        int ans[] = multiplyBy10(arr);
+//        System.out.println("Printing ans array : ");
+//        for (int i:ans){
+//            System.out.println(i);
+//        }
+//    }
 
-        for (int i=0;i<size;i++){
-            int element = arr[i];
-            int newElement = element * 10;
-            newArray[i] = newElement;
+    //Question-3
+//    static boolean findTarget(int arr[], int target){
+//        for (int i=0;i<arr.length;i++){
+//            if (arr[i]==target){
+//                return true;
+//            }
+//        }
+//        //agar poora array travel ho chuka h
+//        //aur ek baar bhi target nhi mila
+//        //to target array me present nhi h
+//        //return false
+//        return false;
+//    }
+//    static void main() {
+//        int arr[] = {1,3,5,7,9};
+//        boolean ans = findTarget(arr,9);
+//        System.out.println(ans);
+//    }
+
+    //Question-4
+    static int getMaximum(int arr[]){
+        int max = arr[0];
+        for (int i=0;i<arr.length;i++){
+            if (arr[i]>max){
+                max = arr[i];
+            }
         }
-        //return updated array
-        return newArray;
+        //jab mai yaha pahchunga toh poora array compare ho chuka hoga
+        //and maxi ke andar sabse badi value hogi
+        return max;
     }
+
     static void main() {
-        int arr[] = {1,2,5,3,6};
-        int ans[] = multiplyBy10(arr);
-        System.out.println("Printing ans array : ");
-        for (int i:ans){
-            System.out.println(i);
-        }
+        int arr[] = {5,9,3,10,14};
+        System.out.println(getMaximum(arr));
     }
 }
