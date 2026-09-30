@@ -59,34 +59,68 @@ public class part_7 {
 
 
     //Wave print A Matrix
-    public static List<Integer> wavePrintMatrix(int[][] matrix, int m, int n){
-        List<Integer> result = new ArrayList<>();
+//    public static List<Integer> wavePrintMatrix(int[][] matrix, int m, int n){
+//        List<Integer> result = new ArrayList<>();
+//
+//        //lets move column wise
+//        for (int col=0;col<n;col++){
+//            //hr ek column index ko chexk kro for even/odd
+//            if ((col & 1) == 1){
+//                //add
+//                //bottom to top
+//                for (int row=m-1;row>=0;row--){
+//                    result.add(matrix[row][col]);
+//                }
+//            }
+//            else {
+//                //even
+//                //top to bottom
+//                for (int row=0;row<m;row++){
+//                    result.add(matrix[row][col]);
+//                }
+//            }
+//        }
+//        return result;
+//    }
+//
+//    static void main() {
+//        int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
+//        int m = matrix.length;
+//        int n = matrix[0].length;
+//        System.out.println(wavePrintMatrix(matrix,m,n));
+//    }
 
-        //lets move column wise
-        for (int col=0;col<n;col++){
-            //hr ek column index ko chexk kro for even/odd
-            if ((col & 1) == 1){
-                //add
-                //bottom to top
-                for (int row=m-1;row>=0;row--){
-                    result.add(matrix[row][col]);
-                }
-            }
-            else {
-                //even
-                //top to bottom
-                for (int row=0;row<m;row++){
-                    result.add(matrix[row][col]);
-                }
+
+    //transpose of a matrix
+    public static int[][] transpose(int[][] matrix) {
+        if(matrix == null || matrix.length == 0){
+            return new int[0][0];
+        }
+        //for original array
+        int totalRows = matrix.length;
+        int totalCols = matrix[0].length;
+        //for new array
+        int newTotalRows = totalCols;
+        int newTotalCols = totalRows;
+        int ans[][] = new int[newTotalRows][newTotalCols];
+
+        //actual logic
+        for(int i=0;i<totalRows;i++){
+            for(int j=0;j<totalCols;j++){
+                ans[j][i] = matrix[i][j];
             }
         }
-        return result;
+        return ans;
     }
 
     static void main() {
-        int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
-        int m = matrix.length;
-        int n = matrix[0].length;
-        System.out.println(wavePrintMatrix(matrix,m,n));
+        int[][] matirx = {{1,2,3},{4,5,6},{7,8,9}};
+        int[][] ans = transpose(matirx);
+        for (int i=0;i<ans.length;i++){
+            for (int j=0;j<ans[0].length;j++){
+                System.out.print(ans[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
