@@ -1,0 +1,31 @@
+package Searching;
+
+public class LowerBound {
+    static int getLowerBound(int arr[], int taget){
+        int n = arr.length;
+        int s = 0;
+        int e = n-1;
+        int ans = -1;
+        while (s<=e) {
+            int mid = s + (e - s) / 2;
+
+            if (arr[mid] >= taget){
+                //ans store
+                ans = mid;
+                //move to left
+                e = mid - 1;
+            }
+            else {
+                //right move
+                s = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+    static void main() {
+        int arr[] = {10,20,30,30,30,30,30,40,50};
+        int ans = getLowerBound(arr,35);
+        System.out.println(ans);
+    }
+}
